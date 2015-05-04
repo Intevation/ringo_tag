@@ -7,8 +7,8 @@ from ringo.model.mixins import Owned
 
 class TagFactory(BaseFactory):
 
-    def create(self, user=None):
-        new_item = BaseFactory.create(self, user)
+    def create(self, user=None, values=None):
+        new_item = BaseFactory.create(self, user, values)
         return new_item
 
 
