@@ -12,11 +12,11 @@ log = logging.getLogger(__name__)
 
 modul_config = {
     "name": "tag",
-    "label": "",
+    "label": "Tag",
+    "label_plural": "Tags",
     "clazzpath": "ringo_tag.model.Tag",
-    "label_plural": "",
-    "str_repr": "",
-    "display": "",
+    "str_repr": "%s|name",
+    "display": "admin-menu",
     "actions": ["list", "read", "update", "create", "delete"]
 }
 
@@ -31,4 +31,3 @@ def includeme(config):
     Tag._modul_id = modul.get_value("id")
     translators.append(TranslationStringFactory('ringo_tag'))
     config.add_translation_dirs('ringo_tag:locale/')
-
