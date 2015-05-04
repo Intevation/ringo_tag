@@ -1,5 +1,7 @@
+import cgi
 import sqlalchemy as sa
 from sqlalchemy.ext.declarative import declared_attr
+from ringo.lib.helpers import literal
 from ringo.model import Base
 from ringo.model.base import BaseItem, BaseFactory
 from ringo.model.mixins import Owned
@@ -44,8 +46,8 @@ class Tag(BaseItem, Owned, Base):
             3: "label label-info",
             4: "label label-warning",
             5: "label label-danger"}
-        return '<span class="%s">%s</span>' % (mapping.get(self.tagtype),
-                                               self)
+        return literal('<span class="%s">%s</span>'
+                       % (mapping.get(self.tagtype), cgi.escape(self.name)))
 
 
 class Tagged(object):
