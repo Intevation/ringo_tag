@@ -41,7 +41,7 @@ class Tag(BaseItem, Owned, Base):
     def render(self):
         mapping = {
             0: "label label-default",
-            1: "label label-prinary",
+            1: "label label-primary",
             2: "label label-success",
             3: "label label-info",
             4: "label label-warning",
