@@ -19,7 +19,7 @@
       </options>
     </entity>
     <entity id="e4" name="modul" label="Modul">
-      <renderer type="dropdown"/>
+      <renderer type="dropdown" filter="'Tagged' in %clazzbases"/>
       <help>Optional. Choose a modul this keyword belongs to. If not selected the keyword is considrered as global keyword which is available in all moduls. Otherwise the keyword is only available in the selected modul.</help>
     </entity>
   </source>
