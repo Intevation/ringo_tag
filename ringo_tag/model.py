@@ -38,7 +38,7 @@ class Tag(BaseItem, Owned, Base):
     def get_item_factory(cls):
         return TagFactory(cls)
 
-    def render(self):
+    def render(self, request=None):
         mapping = {
             0: "label label-default",
             1: "label label-primary",
