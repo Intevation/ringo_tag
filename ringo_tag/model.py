@@ -62,6 +62,8 @@ class Tagged(object):
                             sa.Column('iid', sa.Integer,
                                       sa.ForeignKey(cls.id)),
                             sa.Column('tid', sa.Integer,
-                                      sa.ForeignKey("tags.id")))
+                                      sa.ForeignKey("tags.id")),
+                            sa.UniqueConstraint('iid', 'tid')
+                            )
         tags = sa.orm.relationship(Tag, secondary=nm_table)
         return tags
